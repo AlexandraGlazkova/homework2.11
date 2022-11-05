@@ -1,11 +1,11 @@
-package pro.sky.homework21.controller;
+package pro.sky.homework211.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pro.sky.homework21.basket.Product;
-import pro.sky.homework21.service.ProductService;
+import pro.sky.homework211.basket.Product;
+import pro.sky.homework211.service.ProductService;
 
 import java.util.List;
 

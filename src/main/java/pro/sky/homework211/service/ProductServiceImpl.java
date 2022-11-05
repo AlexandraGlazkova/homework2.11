@@ -1,8 +1,9 @@
-package pro.sky.homework21.service;
+package pro.sky.homework211.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
-import pro.sky.homework21.basket.Product;
+import pro.sky.homework211.basket.Product;
+
 
 import java.util.List;
 

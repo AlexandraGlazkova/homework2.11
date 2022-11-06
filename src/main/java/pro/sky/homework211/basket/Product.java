@@ -1,35 +1,36 @@
 package pro.sky.homework211.basket;
 
-import java.util.Objects;
 
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
+import javax.annotation.PostConstruct;
+import java.util.HashSet;
+import java.util.Set;
+
+@Component
+@SessionScope
 public class Product {
-    private int productID;
+    private Set<Integer> productIDs;
 
-    public Product(int productID) {
-        this.productID = productID;
+
+
+    public Product() {
+        this.productIDs = new HashSet<>();
     }
 
-    public int getProductID() {
-        return productID;
+
+    @PostConstruct
+    public void init() {
+        System.out.println("Basket class is here!!!");
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return productID == product.productID;
+    public void add(Set<Integer> productIDs) {
+        for (Integer productID : productIDs) {
+            this.productIDs.addAll(productIDs);
+        }
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(productID);
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "productID=" + productID +
-                '}';
+    public Set<Integer> getProductIDs() {
+        return productIDs;
     }
 }

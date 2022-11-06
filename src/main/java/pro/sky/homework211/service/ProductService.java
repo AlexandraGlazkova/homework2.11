@@ -1,13 +1,12 @@
 package pro.sky.homework211.service;
 
-import pro.sky.homework211.basket.Product;
 
-import java.util.List;
+import java.util.Set;
 
 public interface ProductService {
 
-    Product add(int productID);
+    void add(Set<Integer> productIDs);
 
-    List<Product> get();
+    Set<Integer> get();
 }
 

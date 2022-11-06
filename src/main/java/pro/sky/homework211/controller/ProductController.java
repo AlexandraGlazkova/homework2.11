@@ -4,13 +4,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pro.sky.homework211.basket.Product;
 import pro.sky.homework211.service.ProductService;
-
-import java.util.List;
+import java.util.Set;
 
 @RestController
-@RequestMapping("/store/order")
+@RequestMapping("/order")
 public class ProductController {
     private final ProductService productService;
 
@@ -19,11 +17,11 @@ public class ProductController {
     }
 
     @GetMapping("/add")
-    public Product addProduct(@RequestParam("add") int productID ) {
-        return productService.add(productID);
+    public void addProduct(@RequestParam("add") Set <Integer>productIDs) {
+       productService.add(productIDs);
     }
     @GetMapping("/get")
-    public List<Product> getProduct() {
+    public Set<Integer> get() {
         return productService.get();
     }
 

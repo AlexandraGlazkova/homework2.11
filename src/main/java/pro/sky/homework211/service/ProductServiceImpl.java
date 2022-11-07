@@ -18,7 +18,7 @@ public class ProductServiceImpl implements ProductService {
 
     @PostConstruct
     public void init() {
-        System.out.println("Сервис");
+        System.out.println("Service is here");
     }
     @Override
     public void add(Set<Integer> productIDs) {
